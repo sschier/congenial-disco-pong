@@ -1,0 +1,41 @@
+/* Global Layout Set-up */
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  color: #222;
+  background: #f7f5f0;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+
+	background-color: #f9e79f
+}
+h1 {
+  text-align: center;
+  /*display: block;
+  margin-left: auto;
+  margin-right: auto;*/
+}
+
+p {
+
+  text-align: center;
+}
+
+button {
+  
+  font-size: .85em;
+  padding: .65em 1em;
+  border-radius: .3em;
+  outline: 0;
+}
+#play {
+	align-items: center;
+	justify-content: center;
+	display:flex;
+}

@@ -7,4 +7,4 @@ $pdo = connectToDb();
 
 $players = fetchAllPlayers($pdo);
 
-require 'views/index.view.php';
+require 'views/play.view.php';
