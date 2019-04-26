@@ -1,10 +1,10 @@
 <?php
 
-require 'functions.php';
-require 'Player.php';
+require 'core/bootstrap.php';
 
-$pdo = connectToDb();
 
-$players = fetchAllPlayers($pdo);
+$uri = trim($_SERVER['REQUEST_URI'], '/');
 
-require 'views/index.view.php';
+
+require Router::load('routes.php')->direct(Request::uri());
+

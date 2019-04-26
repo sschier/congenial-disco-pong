@@ -28,7 +28,8 @@
       <p> Ready to start a tournament? </p>
     </header>
     <div id="play">
-    	<form action="views/play.view.php">
+      <form action="views/play.view.php">
+    	<!-- <form action="views/play.view.php"> -->
 		    <input type="submit" value="Play" />
 		</form>
 </div>
