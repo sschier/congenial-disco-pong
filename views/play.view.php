@@ -3,8 +3,8 @@
 <body>
 
 	    <header >
-      <h1> Setup Your Tournament</h1>
-      <p> Let's pick our players  </p>
+      <h1> Your Tournament Overview</h1>
+      <p> Let's Play  </p>
     </header>
     <div id="play">
     	<form action="play">

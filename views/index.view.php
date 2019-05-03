@@ -6,10 +6,9 @@
       <p> Ready to start a tournament? </p>
     </header>
     <div id="play">
-      <form action="play">
-    	<!-- <form action="views/play.view.php"> -->
-		    <input type="submit" value="Play" />
-		</form>
+
+	<a class="btn btn-primary" href="setup">GET STARTED</a>
+
 </div>
 
 <?php require('partials/footer.php') ?>
