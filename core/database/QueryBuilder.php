@@ -40,9 +40,23 @@ class QueryBuilder
 
     }
 
-    // public function insert($table, $parameters)
-    // {
 
-    //     $sql = sprintf('one, two, three');
-    // }
+    public function clearTable($table)
+    {
+        $sql = sprintf("truncate {$table}"); 
+        var_dump($sql);
+        try {
+
+        $statement = $this->pdo->prepare($sql);
+        var_dump($statement);
+        
+        $statement->execute($parameters);
+
+        } catch(\Exception $e) {
+            die('Whoops, something is wrong');
+        }  
+
+    }
+
+
 }

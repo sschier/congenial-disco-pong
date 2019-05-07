@@ -6,10 +6,17 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App' => $baseDir . '/App.php',
+    'Bracket' => $baseDir . '/model/Bracket.php',
+    'Bracket8Team' => $baseDir . '/model/Bracket.php',
+    'ComposerAutoloaderInitf23ab0e38a8cc651d7d9b9afdfc0e8c2' => $vendorDir . '/composer/autoload_real.php',
+    'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
+    'Composer\\Autoload\\ComposerStaticInitf23ab0e38a8cc651d7d9b9afdfc0e8c2' => $vendorDir . '/composer/autoload_static.php',
     'Connection' => $baseDir . '/core/database/Connection.php',
     'Player' => $baseDir . '/Player.php',
     'QueryBuilder' => $baseDir . '/core/database/QueryBuilder.php',
     'Request' => $baseDir . '/core/Request.php',
     'Router' => $baseDir . '/core/Router.php',
-    'Team' => $baseDir . '/core/Team.php',
+    'Team' => $baseDir . '/models/Team.php',
+    'Tournament' => $baseDir . '/models/Tournament.php',
 );

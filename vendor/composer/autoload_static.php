@@ -7,12 +7,19 @@ namespace Composer\Autoload;
 class ComposerStaticInitf23ab0e38a8cc651d7d9b9afdfc0e8c2
 {
     public static $classMap = array (
+        'App' => __DIR__ . '/../..' . '/App.php',
+        'Bracket' => __DIR__ . '/../..' . '/model/Bracket.php',
+        'Bracket8Team' => __DIR__ . '/../..' . '/model/Bracket.php',
+        'ComposerAutoloaderInitf23ab0e38a8cc651d7d9b9afdfc0e8c2' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
+        'Composer\\Autoload\\ComposerStaticInitf23ab0e38a8cc651d7d9b9afdfc0e8c2' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
         'Player' => __DIR__ . '/../..' . '/Player.php',
         'QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
         'Request' => __DIR__ . '/../..' . '/core/Request.php',
         'Router' => __DIR__ . '/../..' . '/core/Router.php',
-        'Team' => __DIR__ . '/../..' . '/core/Team.php',
+        'Team' => __DIR__ . '/../..' . '/models/Team.php',
+        'Tournament' => __DIR__ . '/../..' . '/models/Tournament.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

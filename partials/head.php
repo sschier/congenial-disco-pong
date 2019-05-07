@@ -19,4 +19,13 @@
 	<!-- My Stylesheets -->
   <link rel="stylesheet" href="../css/styles.css">
 
+  <!-- JQuery -->
+<!--   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bracket/0.11.1/jquery.bracket.min.css"></script> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bracket/0.11.1/jquery.bracket.min.js"></script>
+
+  <script src="js/bracket.js"></script> -->
+
 </head>

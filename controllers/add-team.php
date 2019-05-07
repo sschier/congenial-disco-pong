@@ -1,8 +1,6 @@
-
-
 <?php
 var_dump($_SERVER);
 
-$app['database']->insert('players', ['player_name' =>  $_POST['player_name']]);
+$app['database']->insert('teams', ['name' =>  $_POST['name']]);
 
 header('Location: /setup');

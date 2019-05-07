@@ -2,27 +2,18 @@
 
 <body>
 
-	    <header >
-      <h1> Your Tournament Overview</h1>
-      <p> Let's Play  </p>
-    </header>
-    <div id="play">
-    	<form action="play">
-		    <input type="submit" value="Play" />
-  		</form>
+    <div class="jumbotron">
+        <header >
+            <h1 class="display-4"> Your Brackets</h1>
+            <p class="lead"> Let's Play! </p>
+            <div id="bracket">
+
+                <a class="btn btn-primary btn-lg" href="bracket">VIEW BRACKET</a>
+
+            </div>
+        </header>
     </div>
 
 
-
-    <ul>
-    
-      <?php foreach ($players as $player) : ?>
-        <li>
-          <?= $player->player_name; ?>        
-        </li>
-
-      <?php endforeach; ?>
-
-    </ul>
 
 <?php require('partials/footer.php') ?>

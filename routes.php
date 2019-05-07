@@ -9,7 +9,11 @@ $router->define([
 
 	'setup' => 'controllers/setup.php',
 
-	'team' => 'controllers/add-team.php' //only for post types
+	'bracket' => 'controllers/bracket.php',
+
+	'team' => 'controllers/add-team.php',//only for post types
+
+	'clear' => 'controllers/clear-teams.php'
 
 
 ]);

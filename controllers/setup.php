@@ -1,6 +1,6 @@
 <?php
 
-$players = $app['database']->selectAll('players', 'Player');
+$teams = $app['database']->selectAll('teams', 'Team');
 
 require 'views/setup.view.php';
 

@@ -12,14 +12,19 @@ body {
 }
 
 header {
-
-	background-color: #f9e79f
+  padding: 2em;
+	background-color: #f9e79f;
+  text-align: center;
 }
 h1 {
   text-align: center;
   /*display: block;
   margin-left: auto;
   margin-right: auto;*/
+}
+
+h1 {
+  text-align: center;
 }
 
 p {
@@ -34,8 +39,99 @@ button {
   border-radius: .3em;
   outline: 0;
 }
+
+.jumbotron {
+
+  background-color: #0000CD;
+}
+
+.col {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#setup {
+  align-items: center;
+  justify-content: center;
+  display:flex;
+}
+
 #play {
 	align-items: center;
 	justify-content: center;
 	display:flex;
 }
+
+#add-team {
+  text-align: ceter;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 500px) {
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .bracket{
+    width: 50%;
+    margin: 0 auto;
+  }
+
+/*
+   ---- Columns ---- 
+*/
+
+  .col {
+    float: left;
+  }
+
+  .secondary,
+  .primary {
+    width: 50%;
+  }
+
+  .br8 {
+
+    width: 25%;
+  }
+
+  /* ---------------------- */
+
+    /* ---- Float clearfix ---- */
+
+  .clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+}
+
+@media (min-width: 700px) {
+
+ .container {
+    width: 85%;
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+
+  .secondary,
+  .primary {
+    width: 35%;
+  }
+
+  .tertiary {
+    width: 30%;
+  }
+

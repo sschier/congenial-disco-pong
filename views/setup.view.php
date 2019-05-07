@@ -2,29 +2,50 @@
 
 <body>
 
-	    <header >
-      <h1> Setup Your Tournament</h1>
+      <div class="jumbotron">
+  	    <header >
+        <h1 class="display-4"> Setup Your Tournament</h1>
+        </header>
+      </div>
 
-  <ul>
+      <div class="container clearfix">
+
+        <div class="col primary" id="add-team">
+          <h2> Enter the teams  </h2>
+          <form method="POST" action="team">
+            <input name="name"></input>
+            <button type=submit>Submit</button>
+          </form>
+        </div>
+
+          
+
+
     
-      <?php foreach ($players as $player) : ?>
-        <li>
-          <?= $player->player_name; ?>        
-        </li>
 
-      <?php endforeach; ?>
+        <div class="col secondary" id="teams">
+          <h2> Your Teams</h2>
+          <ul>
+            
+              <?php foreach ($teams as $team) : ?>
+                <li>
+                  <?= $team->name; ?>        
+                </li>
 
-    </ul>
+              <?php endforeach; ?>
 
+          </ul>
+          <form method="POST" action="clear">
+            <button type=submit>Clear</button>
+          </form>
+        </div>
 
+        <div class="col tertiary">
+          
+          <a class="btn btn-danger btn-lg" href="bracket">VIEW BRACKET</a>
 
-    </header>
-    <p> Enter the teams  </p>
-    <div id="play">
-    	<form method="POST" action="team">
-        <input name="player_name"></input>
-        <button type=submit>Submit</button>
-      </form>
+        </div>
+
     </div>
 
 

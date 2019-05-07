@@ -1,14 +1,16 @@
 <?php require('partials/head.php') ?>
 <body>
 
-	<header >
-	  <h1> Welcome to Ping Pong Mania</h1>
-      <p> Ready to start a tournament? </p>
-    </header>
-    <div id="play">
+	<div class="jumbotron">
+		<header> 
+		  <h1 class="display-4"> Welcome to Ping Pong Mania</h1>
+	      <p class="lead"> Ready to start a tournament? </p>
+	    </header>
+	</div>
+    <div id="setup">
 
-	<a class="btn btn-primary" href="setup">GET STARTED</a>
+		<a class="btn btn-success btn-lg" href="setup">GET STARTED</a>
 
-</div>
+	</div>
 
 <?php require('partials/footer.php') ?>
