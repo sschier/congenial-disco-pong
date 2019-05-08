@@ -7,6 +7,7 @@ class Tournament  {
 
 
 	public $teams;
+	public $bracket;
 
 	public function __construct($teams)
 	{
@@ -15,8 +16,8 @@ class Tournament  {
 
 	public function setupTournament() {
 		//Create bracket object based number of players or elimination type
-		$bracket = new Bracket8Team($this->teams);
-		$bracket->setupMatches();
+		$this->bracket = new Bracket8Team($this->teams);
+		$this->bracket->setupRound($this->teams);
 	}
 
 	public function getActivePlayers() {
