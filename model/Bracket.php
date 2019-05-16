@@ -13,7 +13,7 @@ class Bracket8Team implements Bracket {
 
 	public $teams;
 
-	private $numberOfRounds = 8;
+	private $numberOfRounds;
 
 	public $round = array();
 
@@ -21,6 +21,7 @@ class Bracket8Team implements Bracket {
 
 	{
 		$this->teams = $teams;
+		var_dump(count($this->teams));
 	}
 
 
