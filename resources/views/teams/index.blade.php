@@ -17,9 +17,23 @@
           	@csrf
 
 
-            <input name="name"></input>
+            <input name="name" required ></input>
 
             <button type=submit>Submit</button>
+
+            @if ($errors->any())
+
+                <ul>
+
+                    @foreach ($errors->all() as $error)
+
+                        <li>{{ $error }}</li>
+
+                    @endforeach
+
+                </ul>
+
+            @endif
 
           </form>
 

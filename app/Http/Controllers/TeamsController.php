@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Team;
 
 
 
@@ -11,7 +12,7 @@ class TeamsController extends Controller
     public function index()
 
     {
-    	$teams = \App\Team::all();  //will probably only want teams for a given user
+    	$teams = Team::all();  //will probably only want teams for a given user
 
     	return view('teams.index', compact('teams')); //resources/views/teams/index.blade.php
 
@@ -20,27 +21,39 @@ class TeamsController extends Controller
     public function store()
 
     {
-    	$team = new \App\Team();
 
-    	$team->name = request('name');
 
-    	$team->save();
+        Team::create(request()->validate([
+
+            'name' => 'required | min:3'
+
+        ]));
+            
+
+// Line above does the same as these next three lines plus adds valdation inline.
+    	// $team = new \App\Team();
+
+    	// $team->name = request('name');
+
+    	// $team->save();
 
     	return redirect('/teams');
     }
 
-    public function show($id)
+    public function show(Team $team)
 
     {
-        $team = \App\Team::findOrFail($id);
+        // Use route model binding instead
+        // $team = \App\Team::findOrFail($id);
+        dump($team->matchesWon->first()->matchName);
 
         return view('teams.show', compact('team'));
     }
 
-    public function edit($id)
+    public function edit(Team $team)
     {
 
-        $team = \App\Team::findOrFail($id);
+        // $team = \App\Team::findOrFail($id);
 
         return view('teams.edit', compact('team'));
     }
@@ -52,18 +65,24 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    // public function update(Request $request, $id)
+    public function update(Team $team)
 
 
     {
+        request()->validate([
+
+            'name' => 'required'
+
+        ]);
         
-        $team = \App\Team::findOrFail($id);
+        $team->update(request()->all());
 
         // dd(request()->all());
 
-        $team->name = request('name');
+        // $team->name = request('name');
 
-        $team->save();
+        // $team->save();
         return redirect('/teams/');
     }
 
@@ -73,9 +92,10 @@ class TeamsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Team $team)
     {
-        \App\Team::find($id)->delete();
+        // \App\Team::find($id)->delete();
+        $team->delete();
 
         return redirect('/teams/');
     }

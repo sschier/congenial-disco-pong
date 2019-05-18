@@ -16,8 +16,10 @@
 	@else
 
 		<h2>Match results:</h2>
+		
 
-		<h3>{{ $teams[($match->winnerId)-1]->name }} - WINNER!!</h3>
+		{{-- <h3>{{ $winner->name }} - WINNER!!</h3> --}}
+		<h3>{{ $match->winningTeam->name }} - WINNER!!</h3>
 
 
 		<ul>

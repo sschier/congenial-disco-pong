@@ -16,6 +16,7 @@ class CreateMatchesTable extends Migration
         // Should make name columns NOT NULL
         Schema::create('matches', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('round_id');
             $table->string('matchName');
             $table->integer('team1Id');
             $table->string('team1Name');

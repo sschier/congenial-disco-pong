@@ -51,9 +51,10 @@ use App\Match;
  	public function getActiveTeams($data)
 
  	{
- 		// $activeTeams = array_filter($this->teams->toArray(), function($entry) {
+ 		
  		$activeTeams = $data->filter(function($entry) {
- 			return $entry['advance'] > 0;
+
+ 			return $entry['advance'] > 0; //TODO: should be == 1;
 
  		});
  		return $activeTeams;
@@ -67,12 +68,38 @@ use App\Match;
  		$activeTeams = $this->getActiveTeams($this->getTeams());
  		$counter = 0;
 
+ 		 // dd($activeTeams);
  		while($counter < count($activeTeams)) {
+ 			// dd($counter);
+ 			// dd($activeTeams[$counter]);
+ 			// dd($activeTeams[3]);
  			$match = $this->match($activeTeams[$counter], $activeTeams[$counter+1]);
  			$this->round[] = $match; 
  			$counter+=2;
  		}
  	}
+
+ 	// public function getNMatches()
+
+ 	// public function getNRounds()
+
+ 	// {
+ 	// 	$n_rounds = '';
+ 	// }
+
+ 	// public function getRounds()
+
+ 	// {
+
+ 	// }
+
+ 	// public function setupTournament()
+
+ 	// {
+ 	// 	$rounds = $this->getRounds();
+ 	// }
+
  } 	
+ 	
  	
  	

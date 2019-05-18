@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Helpers\Helper;
+use App\{Match, Team};
 
 class MatchesController extends Controller
 {
@@ -13,8 +14,9 @@ class MatchesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        $matches = \App\Match::all();
+        $matches = Match::all();
         return view('matches.index', compact('matches'));
     }
 
@@ -69,14 +71,13 @@ class MatchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Match $match)
 
     {
-        $teams = \App\Team::all();
-        $match = \App\Match::findOrFail($id);
-        //$winner = \App\Team::where('id', $match->winnerId);
+        // dd(\App\Match::first()->winningTeam());
+        $winner = Team::find($match->winnerId);
 
-        return view('matches.show', compact('match'), compact('teams'));
+        return view('matches.show', compact('match'), compact('winner'));
     }
 
     /**
@@ -85,14 +86,10 @@ class MatchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Match $match)
     {
-        //This will accept the match id and take you to a page where the match can
-        //be edited (or played actually).  There can be a place where the score is entered
-        //There will need to be a function that then decides who won and updates that as well.
-        //My buttons on the tournament page can just redirect to each match edit 
 
-        $match = \App\Match::findOrFail($id);
+        // $match = \App\Match::findOrFail($id);
 
         return view('matches.edit', compact('match'));
     }
@@ -104,23 +101,39 @@ class MatchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Match $match)
 
 
     {
-        $teams = \App\Team::all();
-        $match = \App\Match::find($id);
+
+        $match->update(request()->all());
+
+
+        if(request('winnerId') == $match->team1Id){ 
+
+            Team::find($match->team2Id)->update(['advance' => 0]);
+
+        } else {
+
+            Team::find($match->team1Id)->update(['advance' => 0]);
+
+        }
+
+        
+
+        
+        // $match = \App\Match::find($id);
 
         //dd(request()->all());
 
-        $match->team1Score = request('team1Score');
-        $match->team2Score = request('team2Score');
-        $match->winnerId = request('winnerId');
+        // $match->team1Score = request('team1Score');
+        // $match->team2Score = request('team2Score');
+        // $match->winnerId = request('winnerId');
 
-        $match->save();
+        // $match->save();
 
         
-        \App\Team::update('update teams set advance = 0 where id = ?', [ request('winnerId') ]);
+        // $teams::update('update teams set advance = 0 where id = ?', [ request('winnerId') ]);
        
         
         return redirect('/matches/');

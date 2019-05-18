@@ -7,7 +7,8 @@
     <ul>
       @foreach ($matches as $match)
         <li>
-            <a href="/matches/{{  $match->id }}">{{ $match->matchName  }}</a>        
+            <a href="/matches/{{  $match->id }}">{{ $match->matchName  }}</a> 
+            {{-- <p>{{ $match->winningTeam->name }}</p>        --}}
         </li>
       @endforeach
     </ul>

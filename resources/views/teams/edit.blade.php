@@ -14,7 +14,8 @@
 
 			<div class="control">
 
-				<input type="text" class = "input" name="name" placeholder={{  $team->name }}>
+				{{-- TODO: fix placeholder  --}}
+				<input type="text" class = "input" name="name" required value="{{ $team->name }}">
 
 			</div>
 		</div>
