@@ -17,6 +17,11 @@ class Team extends Model
     	'id'
     ];
 
+    public function tournament()
+    {
+        return $this->belongsTo(Tournament::class);
+    }
+
     public function matchesWon()
 
     {

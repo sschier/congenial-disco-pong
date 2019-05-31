@@ -11,6 +11,39 @@
 |
 */
 
+// Bind instances of models into the service container.. use auto-resolution
+
+// //Creates new instance everytime called
+// app()->bind('example', function() {
+
+// 	return new \App\Example;
+// });
+
+// //Instantiates one instance of Example and returns the same instance everytime it's called
+// app()->singleton('example', function() {
+
+// 	return new \App\Example;
+// });
+
+Route::resource('matches', 'MatchesController');
+
+Route::delete('matches/', 'MatchesController@clear');
+
+
+
+
+Route::resource('tournaments', 'TournamentsController');
+
+
+
+
+Route::patch('tournaments/{tournament}/teams/{team}', 'TournamentTeamsController@update'); 
+
+Route::post('tournaments/{tournament}/teams', 'TournamentTeamsController@store');
+
+
+
+
 Route::get('/', 'PagesController@home');
 
 Route::get('setup', 'PagesController@setup');
@@ -18,6 +51,9 @@ Route::get('setup', 'PagesController@setup');
 Route::get('bracket', 'PagesController@bracket');
 
 Route::get('play', 'PagesController@play');
+
+
+
 
 Route::get('/teams', 'TeamsController@index');
 
@@ -33,23 +69,15 @@ Route::get('teams/{team}', 'TeamsController@show')->name('teams.show');
 
 Route::delete('teams/{team}', 'TeamsController@destroy');
 
-Route::resource('matches', 'MatchesController');
 
-Route::delete('matches/', 'MatchesController@clear');
 
-// Route::get('/matches', 'MatchesController@index');
 
-// Route::get('/matches/create', 'MatchesController@create');
 
-// Route::get('matches/{match}', 'MatchesController@show');
 
-// Route::post('matches/', 'MatchesController@store');
 
-// Route::get('matches/{match}/edit', 'MatchesController@edit');
 
-// Route::patch('matches/{match}', 'MatchesController@update');
+//Route::post('completed-matches/{match}', 'CompletedMacthesController@store');
 
-// Route::delete('matches/{match}', 'MatchesController@destroy');
 
 
 

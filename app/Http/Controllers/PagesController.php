@@ -17,7 +17,8 @@ class PagesController extends Controller
     }
 
 
-
+//These are obsolete
+    
     //controller for setup
     public function setup()
 

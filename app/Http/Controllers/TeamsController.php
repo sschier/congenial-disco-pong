@@ -14,6 +14,8 @@ class TeamsController extends Controller
     {
     	$teams = Team::all();  //will probably only want teams for a given user
 
+        // dd(app('foo'));
+
     	return view('teams.index', compact('teams')); //resources/views/teams/index.blade.php
 
     }

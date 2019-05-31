@@ -18,3 +18,8 @@ class Round extends Model
 
     
 }
+
+// Remember: can add hidden inouts into forms, like round_id or whatever..
+
+//Good idea to add another controller for completed matches and another for completed rounds
+// (when in doubt, create a new controller and return to rest)

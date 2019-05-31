@@ -90,11 +90,13 @@
 
                 <div class="links">
                     <a href="/">Home</a>
-                    <a href="/teams">Setup Teams</a>
-{{--                     <a href="/bracket">View Brackets</a>
-                    <a href="/play">Play</a> --}}
+                    <a href="/tournaments">View Tournaments</a>
+                    <a href="/tournaments/create">Create New Tournament</a>
+{{--                     <a href="/teams">Setup Teams</a>
+                    <a href="/bracket">View Brackets</a>
+                    <a href="/play">Play</a>
                     <a href="/matches">Start Match</a>
-                    {{-- <a href="/teams">View Teams</a> --}}
+                    <a href="/teams">View Teams</a> --}}
                 </div>
             </div>
         </div>

@@ -50,6 +50,10 @@ button {
   padding-right: 1em;
 }
 
+.is-dead {
+  text-decoration: line-through;
+}
+
 #setup {
   align-items: center;
   justify-content: center;
@@ -68,7 +72,6 @@ button {
   align-items: center;
   justify-content: center;
   display: inline-block;
-
 }
 
 

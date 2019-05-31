@@ -48,15 +48,13 @@ use App\Match;
  		return $match;
  	}
 
- 	public function getActiveTeams($data)
+ 	public function getActiveTeams()
 
  	{
  		
- 		$activeTeams = $data->filter(function($entry) {
+ 		$activeTeams = $this->teams->where('advance', 1); //TODO: should be == 1;
 
- 			return $entry['advance'] > 0; //TODO: should be == 1;
-
- 		});
+ 		
  		return $activeTeams;
  	}
 
@@ -64,17 +62,28 @@ use App\Match;
  	public function setupRound()
 
  	{
- 		//dd($this->getTeams());
- 		$activeTeams = $this->getActiveTeams($this->getTeams());
+
+ 		$teams_array = array();
+
+ 		$activeTeams = $this->getActiveTeams();
+
+
+ 		foreach ($activeTeams as $team) {
+
+ 			array_push($teams_array, $team);
+
+ 			
+ 		}
+
+
  		$counter = 0;
 
- 		 // dd($activeTeams);
- 		while($counter < count($activeTeams)) {
- 			// dd($counter);
- 			// dd($activeTeams[$counter]);
- 			// dd($activeTeams[3]);
- 			$match = $this->match($activeTeams[$counter], $activeTeams[$counter+1]);
+ 		while($counter < count($teams_array)) {
+
+ 			$match = $this->match($teams_array[$counter], $teams_array[$counter+1]);
+
  			$this->round[] = $match; 
+
  			$counter+=2;
  		}
  	}
